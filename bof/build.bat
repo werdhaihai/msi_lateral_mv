@@ -1,0 +1,1 @@
+cl.exe /TC /D BOF /c /GS- msi_lateral_mv.c /Fo:msi_lateral_mv.x64.o
