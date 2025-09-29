@@ -1,8 +1,9 @@
 # msi_lateral_mv
 
 This is a BOF that uses the MSI Server over DCOM to install and configure an ODBC driver using the Custom Action Server
-Read more on the blogpost
 
+Read more about this on the blogpost:
+https://specterops.io/blog/2025/09/29/dcom-again-installing-trouble-lateral-movement-bof/
 
 All arguments are wide strings.
 
