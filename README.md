@@ -4,6 +4,8 @@ This is a BOF that uses the MSI Server over DCOM to install and configure an ODB
 Read more on the blogpost
 
 
+All arguments are wide strings.
+
 ```
 Usage:
   msi_lateral_mv local <drivername> <dllpath>                                : Local, current user
