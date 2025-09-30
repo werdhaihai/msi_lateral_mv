@@ -32,6 +32,8 @@ WINBASEAPI int WINAPI USER32$wsprintfW(LPWSTR  pwszOut, LPCWSTR pwszFmt, ...);
 // MSVCRT
 // WINBASEAPI void   __cdecl MSVCRT$memset(void *dest, int c, size_t count);
 WINBASEAPI size_t __cdecl MSVCRT$wcslen(const wchar_t *_Str);
+WINBASEAPI int __cdecl MSVCRT$_wcsicmp(const wchar_t *string1, const wchar_t *string2);
+
 
 #else
 // C defs
@@ -58,6 +60,7 @@ WINBASEAPI size_t __cdecl MSVCRT$wcslen(const wchar_t *_Str);
 
 // #define MSVCRT$memset                       memset
 #define MSVCRT$wcslen                       wcslen
+#define MSVCRT$_wcsicmp _wcsicmp
 
 #define BeaconPrintf(x, y, ...)             printf(y, ##__VA_ARGS__)
 
