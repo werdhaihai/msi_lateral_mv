@@ -45,10 +45,10 @@ ParsedArgs ParseBOFArguments(datap* parser, int* pDataLength)
     }
     
     // Determine if local or remote
-    if (_wcsicmp(mode, L"local") == 0) {
+    if (MSVCRT$_wcsicmp(mode, L"local") == 0) {
         args.isRemote = FALSE;
     }
-    else if (_wcsicmp(mode, L"remote") == 0) {
+    else if (MSVCRT$_wcsicmp(mode, L"remote") == 0) {
         args.isRemote = TRUE;
     }
     else {
