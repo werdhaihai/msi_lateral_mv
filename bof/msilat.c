@@ -28,7 +28,7 @@ HRESULT get_custom_action_server(IUnknown* pIMsiServerAuthd, IMsiCustomAction** 
     unsigned long outServerPid = 0;
     int iRemoteAPICookieSize = COOKIE_SIZE;
     char rgchCookie[COOKIE_SIZE];
-    memset(rgchCookie, 0, COOKIE_SIZE);
+    MSVCRT$memset(rgchCookie, 0, COOKIE_SIZE);
 
     WCHAR* pvEnvironment = KERNEL32$GetEnvironmentStringsW();
     DWORD cEnv = GetEnvironmentSizeW(pvEnvironment);
