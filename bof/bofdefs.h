@@ -30,10 +30,10 @@ DECLSPEC_IMPORT BOOL    WINAPI SHLWAPI$PathRemoveFileSpecW(LPWSTR pszPath);
 WINBASEAPI int WINAPI USER32$wsprintfW(LPWSTR  pwszOut, LPCWSTR pwszFmt, ...);
 
 // MSVCRT
-// WINBASEAPI void   __cdecl MSVCRT$memset(void *dest, int c, size_t count);
+WINBASEAPI void __cdecl MSVCRT$memset(void *dest, int c, size_t count);
+WINBASEAPI wchar_t *__cdecl MSVCRT$wcscpy(wchar_t * _Dest, const wchar_t * _Source);
 WINBASEAPI size_t __cdecl MSVCRT$wcslen(const wchar_t *_Str);
-WINBASEAPI int __cdecl MSVCRT$_wcsicmp(const wchar_t *string1, const wchar_t *string2);
-
+WINBASEAPI int __cdecl MSVCRT$_wcsicmp(const wchar_t *_Str1,const wchar_t *_Str2);
 
 #else
 // C defs
